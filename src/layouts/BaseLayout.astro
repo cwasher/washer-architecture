@@ -1,0 +1,66 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Washer Architecture — Thoughtful design for modern living. Custom homes, renovations, and commercial projects in Northwest Arkansas.',
+  ogImage = '/og-default.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteTitle = title === 'Home' ? 'Washer Architecture' : `${title} | Washer Architecture`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{siteTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Washer Architecture",
+      "url": "https://washerarchitecture.com",
+      "description": "Thoughtful architectural design for modern living in Northwest Arkansas.",
+      "areaServed": "Northwest Arkansas",
+      "email": "hello@washerarchitecture.com",
+      "telephone": "+1-479-555-0142",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bentonville",
+        "addressRegion": "AR",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$$$",
+      "serviceType": ["Architecture", "Residential Design", "Commercial Design", "Renovation"]
+    })} />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

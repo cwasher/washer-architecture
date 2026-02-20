@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+
+const values = [
+  { title: 'Rooted Design', desc: 'We design for place — responding to climate, culture, and context rather than imposing a predetermined style.' },
+  { title: 'Enduring Quality', desc: 'We choose materials and methods that age gracefully, favoring longevity over trends.' },
+  { title: 'Honest Collaboration', desc: 'Great architecture emerges from open dialogue. We listen as much as we draw.' },
+  { title: 'Responsible Practice', desc: 'We pursue energy efficiency, material stewardship, and designs that tread lightly on the land.' },
+  { title: 'Craft & Detail', desc: 'We believe the difference between good and exceptional lives in the details — joinery, proportion, light.' },
+];
+
+const services = [
+  'Schematic Design',
+  'Design Development',
+  'Construction Documents',
+  'Construction Administration',
+  'Interior Design & Material Selection',
+  'Feasibility & Site Analysis',
+  'Zoning & Code Consultation',
+  'Sustainable Design Strategy',
+];
+---
+
+<BaseLayout title="About" description="Learn about Washer Architecture — our story, values, and approach to design in Northwest Arkansas.">
+  <Section bg="white">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">About</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-stone-900 tracking-tight">A studio built on conviction.</h1>
+      <div class="mt-8 space-y-5 text-stone-600 leading-relaxed">
+        <p>
+          Washer Architecture is a design studio based in Bentonville, Arkansas, founded on the belief that good architecture belongs to its place. We work across scales — from single-family homes to mixed-use developments — with a consistent focus on craft, sustainability, and the human experience of space.
+        </p>
+        <p>
+          Our practice began in 2015 with a simple premise: Northwest Arkansas deserves architecture that reflects its unique landscape, community, and ambition. Every project starts with deep listening — to the site, the client, and the culture — and evolves through rigorous design exploration into buildings that feel both inevitable and surprising.
+        </p>
+        <p>
+          We are a small team by choice. This allows us to give every project the principal-level attention it deserves, from first sketch to final walkthrough. Our clients become collaborators, and their buildings become part of the ongoing story of this region.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section bg="light">
+    <div class="text-center mb-12 lg:mb-16">
+      <p class="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">What Guides Us</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-stone-900">Our Values</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {values.map(({ title, desc }) => (
+        <div class="bg-white p-6 rounded border border-stone-200">
+          <h3 class="text-base font-semibold text-stone-900 mb-2">{title}</h3>
+          <p class="text-sm text-stone-500 leading-relaxed">{desc}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section bg="white">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">What We Offer</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-8">Services</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+        {services.map((service) => (
+          <li class="flex items-center text-stone-700">
+            <svg class="w-4 h-4 text-stone-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            {service}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+
+  <Section bg="dark">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's build something meaningful.</h2>
+      <p class="text-stone-400 text-lg mb-8 max-w-xl mx-auto">
+        Whether you're dreaming of a new home, reimagining an existing space, or planning a commercial project, we'd love to hear about it.
+      </p>
+      <Button href="/contact" variant="primary" size="lg">Start a Conversation</Button>
+    </div>
+  </Section>
+</BaseLayout>

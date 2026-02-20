@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+import ProjectGrid from '../../components/ProjectGrid.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects
+  .sort((a, b) => b.data.year - a.data.year || a.data.title.localeCompare(b.data.title))
+  .map((p) => ({
+    title: p.data.title,
+    slug: p.id,
+    year: p.data.year,
+    location: p.data.location,
+    summary: p.data.summary,
+    coverImage: p.data.coverImage,
+    projectType: p.data.projectType,
+  }));
+---
+
+<BaseLayout title="Projects" description="Explore our portfolio of custom homes, renovations, and commercial projects across Northwest Arkansas.">
+  <Section bg="white">
+    <div class="mb-12 lg:mb-16">
+      <p class="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">Portfolio</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-stone-900">Our Projects</h1>
+      <p class="mt-4 text-lg text-stone-500 max-w-2xl">
+        A selection of residential and commercial work across Northwest Arkansas. Each project reflects our commitment to thoughtful design and enduring quality.
+      </p>
+    </div>
+    <ProjectGrid projects={sortedProjects} />
+  </Section>
+</BaseLayout>

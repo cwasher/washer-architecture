@@ -1,0 +1,138 @@
+You are an expert Astro + Tailwind engineer. Build a primarily static marketing/portfolio website for an architectural firm named “Washer Architecture”.
+
+TECH STACK
+- Framework: Astro (latest stable)
+- Styling: Tailwind CSS (latest stable)
+- Content: Astro Content Collections using Markdown content with a strict frontmatter schema
+- Images: Use Astro’s image handling (responsive images where practical)
+- Deployment target: static site output (no server required)
+
+GOALS
+- Build a clean, minimal, modern architecture-firm aesthetic: lots of whitespace, strong typography, calm neutral palette (no loud colors).
+- Performance-focused: ship minimal JS, avoid heavy client-side interactivity unless needed.
+- Content-editing workflow: projects are added by creating a new Markdown file in a content collection + adding images in a predictable folder structure.
+
+PAGES (required)
+1) Home (/)
+   - Hero section with firm name + short tagline + CTA buttons (“View Projects”, “Start a Project”)
+   - Featured projects grid (pull 3–6 featured projects from content collection)
+   - Services/Capabilities (3–6 bullets/cards)
+   - Process overview (Discover / Design / Document / Support)
+   - Testimonial placeholder (static)
+   - Footer with contact info and links
+
+2) Projects index (/projects)
+   - Project cards grid with filters-by-tag OPTIONAL (simple, no JS required; can be tag sections or separate pages)
+   - Each card: cover image, title, location, year, short excerpt
+   - Sort order: newest first by year (then title)
+
+3) Project detail (/projects/[slug])
+   - Pull from content collection
+   - Layout: title, metadata (location/year/scope), intro/excerpt, image gallery, optional “Credits” + “Services”
+   - SEO: dynamic title/description, OpenGraph image if provided
+   - “Next / Previous” navigation at bottom
+
+4) About (/about)
+   - Studio story section
+   - Values (3–5)
+   - Services list
+   - Simple CTA to Contact
+
+5) Contact (/contact)
+   - Contact/intake form (name, email, phone optional, project location, project type, target budget range, timeline, message)
+   - Spam protection placeholder (no 3rd-party required at first)
+   - On submit: for now just POST to a placeholder endpoint and show a success message (client-side progressive enhancement optional)
+   - Also include direct email link + phone placeholder + general location (“Northwest Arkansas”)
+
+CONTENT MODEL (Astro Content Collections)
+Create a collection: src/content/projects/
+Schema fields required:
+- title: string
+- slug: string (optional; if omitted, infer from filename)
+- year: number
+- location: string
+- projectType: enum (e.g., “Custom Home”, “Renovation”, “Multi-Family”, “Light Commercial”)
+- services: string[] (e.g., “Schematic Design”, “Construction Documents”)
+- tags: string[]
+- featured: boolean
+- summary: string (short, used on cards + meta description)
+- coverImage: image() (or string path) REQUIRED
+- gallery: image()[] (or string paths) OPTIONAL
+- ogImage: image() OPTIONAL
+
+Add at least 4 sample projects with believable content and placeholder images.
+If real images are not available, use simple placeholder images generated locally (solid color with text) or use public placeholder images, but keep it consistent.
+
+DESIGN SYSTEM / COMPONENTS
+- Tailwind config with:
+  - Font stack: system by default (optional: add a Google font like “Inter” or “IBM Plex Sans” if easy)
+  - Container widths and spacing rules
+- Components to build:
+  - Header/Nav (logo text “Washer Architecture”, links, mobile menu)
+  - Footer
+  - Button (primary/secondary)
+  - Section wrapper
+  - ProjectCard
+  - ProjectGrid
+  - Badge/Tag
+  - Simple Gallery (no heavy JS; just responsive grid; optional lightbox later)
+
+ROUTING / STRUCTURE
+- Use Astro layouts:
+  - src/layouts/BaseLayout.astro
+  - src/layouts/PageLayout.astro (optional)
+- Pages:
+  - src/pages/index.astro
+  - src/pages/projects/index.astro
+  - src/pages/projects/[...slug].astro (or [slug].astro)
+  - src/pages/about.astro
+  - src/pages/contact.astro
+
+SEO REQUIREMENTS
+- Global: site title template, meta description default, canonical URLs
+- Per-page: unique title + description
+- Add sitemap + robots.txt (static)
+- Add JSON-LD for a local “ProfessionalService” (architecture firm) with placeholders:
+  - name, url, areaServed, email, telephone, address (can be generic/placeholder)
+
+ACCESSIBILITY
+- Proper heading hierarchy
+- Keyboard nav for menu
+- Reasonable color contrast
+
+DELIVERABLES
+1) A working Astro project in the repo with Tailwind configured
+2) All required pages implemented and linked in nav/footer
+3) Content Collection schema and sample project content
+4) Clean, readable code and file organization
+5) README.md explaining:
+   - how to run locally
+   - how to add a new project (step-by-step)
+   - where images go and how to reference them
+
+IMPLEMENTATION STEPS (follow these in order)
+1) Scaffold Astro project and install/configure Tailwind
+2) Create base layout, header, footer, global styles
+3) Configure Content Collections schema for projects
+4) Create sample project markdown files + placeholder images
+5) Build Projects index + Project detail pages from collection
+6) Build Home page pulling featured projects
+7) Build About and Contact pages + form UI
+8) Add SEO tags, JSON-LD, sitemap, robots.txt
+9) Final pass: ensure links work, no broken imports, build succeeds
+
+ACCEPTANCE CRITERIA
+- `npm run dev` starts successfully
+- `npm run build` succeeds with no errors
+- Home shows featured projects pulled from content
+- /projects lists all projects; each opens a detail page
+- Contact form is present and styled
+- README includes clear “add project” workflow
+
+IMPORTANT CONSTRAINTS
+- Keep JS minimal (no React unless absolutely necessary)
+- No external CMS
+- No database
+- Prioritize a clean, professional architecture portfolio vibe
+
+Now generate the complete project.
