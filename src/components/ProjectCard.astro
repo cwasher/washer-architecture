@@ -13,7 +13,7 @@ const { title, slug, year, location, summary, coverImage, projectType } = Astro.
 ---
 
 <a href={`/projects/${slug}`} class="group block">
-  <div class="aspect-[4/3] overflow-hidden rounded-sm bg-stone-200 mb-4">
+  <div class="aspect-[4/3] overflow-hidden rounded bg-gray-200 mb-4">
     <img
       src={coverImage}
       alt={title}
@@ -22,13 +22,13 @@ const { title, slug, year, location, summary, coverImage, projectType } = Astro.
     />
   </div>
   <div class="space-y-1.5">
-    <p class="text-xs font-medium uppercase tracking-wider text-stone-400">
+    <p class="text-xs font-heading font-semibold uppercase tracking-wider text-brand-orange-text">
       {projectType} &middot; {year}
     </p>
-    <h3 class="text-lg font-semibold text-stone-900 group-hover:text-stone-600 transition-colors">
+    <h3 class="text-lg font-heading font-bold text-brand-teal-dark group-hover:text-brand-orange transition-colors">
       {title}
     </h3>
-    <p class="text-sm text-stone-500">{location}</p>
-    <p class="text-sm text-stone-500 leading-relaxed line-clamp-2">{summary}</p>
+    <p class="text-sm font-body text-brand-slate">{location}</p>
+    <p class="text-sm font-body text-gray-500 leading-relaxed line-clamp-2">{summary}</p>
   </div>
 </a>

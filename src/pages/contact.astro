@@ -8,28 +8,28 @@ import Button from '../components/Button.astro';
   <Section bg="white">
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
       <div class="lg:col-span-2">
-        <p class="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">Contact</p>
-        <h1 class="text-3xl md:text-4xl font-bold text-stone-900 tracking-tight">Start a project.</h1>
-        <p class="mt-4 text-stone-500 leading-relaxed">
+        <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-orange-text mb-3">Contact</p>
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-brand-teal-dark">Start a project.</h1>
+        <p class="mt-4 font-body text-gray-600 leading-relaxed">
           Tell us about your vision. We'll respond within two business days to schedule an introductory conversation.
         </p>
 
         <div class="mt-8 space-y-4">
           <div>
-            <h3 class="text-sm font-semibold text-stone-900 mb-1">Email</h3>
-            <a href="mailto:hello@washerarchitecture.com" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">
+            <h3 class="text-sm font-heading font-bold text-brand-teal-dark mb-1">Email</h3>
+            <a href="mailto:hello@washerarchitecture.com" class="text-sm font-body text-gray-600 hover:text-brand-orange transition-colors">
               hello@washerarchitecture.com
             </a>
           </div>
           <div>
-            <h3 class="text-sm font-semibold text-stone-900 mb-1">Phone</h3>
-            <a href="tel:+14795550142" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">
+            <h3 class="text-sm font-heading font-bold text-brand-teal-dark mb-1">Phone</h3>
+            <a href="tel:+14795550142" class="text-sm font-body text-gray-600 hover:text-brand-orange transition-colors">
               (479) 555-0142
             </a>
           </div>
           <div>
-            <h3 class="text-sm font-semibold text-stone-900 mb-1">Location</h3>
-            <p class="text-sm text-stone-500">Bentonville, Arkansas<br />Northwest Arkansas</p>
+            <h3 class="text-sm font-heading font-bold text-brand-teal-dark mb-1">Location</h3>
+            <p class="text-sm font-body text-gray-600">Bentonville, Arkansas<br />Northwest Arkansas</p>
           </div>
         </div>
       </div>
@@ -38,30 +38,30 @@ import Button from '../components/Button.astro';
         <form id="contact-form" class="space-y-6" action="/api/contact" method="POST">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label for="name" class="block text-sm font-medium text-stone-700 mb-1.5">Name <span class="text-red-500">*</span></label>
-              <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent" placeholder="Your name" />
+              <label for="name" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Name <span class="text-brand-orange">*</span></label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange" placeholder="Your name" />
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-stone-700 mb-1.5">Email <span class="text-red-500">*</span></label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent" placeholder="you@example.com" />
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label for="phone" class="block text-sm font-medium text-stone-700 mb-1.5">Phone <span class="text-stone-400">(optional)</span></label>
-              <input type="tel" id="phone" name="phone" class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent" placeholder="(479) 555-0000" />
-            </div>
-            <div>
-              <label for="location" class="block text-sm font-medium text-stone-700 mb-1.5">Project Location</label>
-              <input type="text" id="location" name="location" class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent" placeholder="City, State" />
+              <label for="email" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Email <span class="text-brand-orange">*</span></label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange" placeholder="you@example.com" />
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label for="projectType" class="block text-sm font-medium text-stone-700 mb-1.5">Project Type</label>
-              <select id="projectType" name="projectType" class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent">
+              <label for="phone" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Phone <span class="text-brand-slate">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange" placeholder="(479) 555-0000" />
+            </div>
+            <div>
+              <label for="location" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Project Location</label>
+              <input type="text" id="location" name="location" class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange" placeholder="City, State" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="projectType" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Project Type</label>
+              <select id="projectType" name="projectType" class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange">
                 <option value="">Select type...</option>
                 <option value="Custom Home">Custom Home</option>
                 <option value="Renovation">Renovation</option>
@@ -71,8 +71,8 @@ import Button from '../components/Button.astro';
               </select>
             </div>
             <div>
-              <label for="budget" class="block text-sm font-medium text-stone-700 mb-1.5">Target Budget Range</label>
-              <select id="budget" name="budget" class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent">
+              <label for="budget" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Target Budget Range</label>
+              <select id="budget" name="budget" class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange">
                 <option value="">Select range...</option>
                 <option value="Under $250K">Under $250K</option>
                 <option value="$250K - $500K">$250K - $500K</option>
@@ -84,8 +84,8 @@ import Button from '../components/Button.astro';
           </div>
 
           <div>
-            <label for="timeline" class="block text-sm font-medium text-stone-700 mb-1.5">Timeline</label>
-            <select id="timeline" name="timeline" class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent">
+            <label for="timeline" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Timeline</label>
+            <select id="timeline" name="timeline" class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange">
               <option value="">Select timeline...</option>
               <option value="Immediately">Ready to start immediately</option>
               <option value="1-3 months">Within 1-3 months</option>
@@ -96,8 +96,8 @@ import Button from '../components/Button.astro';
           </div>
 
           <div>
-            <label for="message" class="block text-sm font-medium text-stone-700 mb-1.5">Message <span class="text-red-500">*</span></label>
-            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2.5 text-sm border border-stone-300 rounded bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400 focus:border-transparent resize-y" placeholder="Tell us about your project, site, and what you're hoping to achieve..."></textarea>
+            <label for="message" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Message <span class="text-brand-orange">*</span></label>
+            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange resize-y" placeholder="Tell us about your project, site, and what you're hoping to achieve..."></textarea>
           </div>
 
           <div id="honeypot" class="hidden">
@@ -110,12 +110,12 @@ import Button from '../components/Button.astro';
           </div>
         </form>
 
-        <div id="form-success" class="hidden bg-stone-50 border border-stone-200 rounded p-8 text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div id="form-success" class="hidden bg-brand-teal/5 border border-brand-teal/20 rounded-lg p-8 text-center">
+          <svg class="w-12 h-12 mx-auto mb-4 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <h3 class="text-lg font-semibold text-stone-900 mb-2">Message sent.</h3>
-          <p class="text-sm text-stone-500">Thank you for reaching out. We'll be in touch within two business days.</p>
+          <h3 class="text-lg font-heading font-bold text-brand-teal-dark mb-2">Message sent.</h3>
+          <p class="text-sm font-body text-gray-600">Thank you for reaching out. We'll be in touch within two business days.</p>
         </div>
       </div>
     </div>

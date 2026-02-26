@@ -7,10 +7,10 @@ const navLinks = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-stone-50/95 backdrop-blur-sm border-b border-stone-200/60">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200/60">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
-    <a href="/" class="text-lg lg:text-xl font-semibold tracking-tight text-stone-900 hover:text-stone-700 transition-colors">
-      Washer Architecture
+    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <img src="/logos/Logo-Color-Positive.svg" alt="Washer Architecture" class="h-12 lg:h-14 w-auto" />
     </a>
 
     <ul class="hidden md:flex items-center gap-8">
@@ -19,10 +19,10 @@ const navLinks = [
           <a
             href={href}
             class:list={[
-              'text-sm font-medium transition-colors',
+              'text-sm font-heading font-semibold uppercase tracking-wider transition-colors',
               pathname.startsWith(href)
-                ? 'text-stone-900'
-                : 'text-stone-500 hover:text-stone-900',
+                ? 'text-brand-teal'
+                : 'text-gray-500 hover:text-brand-teal',
             ]}
           >
             {label}
@@ -30,7 +30,7 @@ const navLinks = [
         </li>
       ))}
       <li>
-        <a href="/contact" class="text-sm font-medium bg-stone-900 text-white px-5 py-2.5 rounded hover:bg-stone-800 transition-colors">
+        <a href="/contact" class="text-sm font-heading font-semibold uppercase tracking-wider bg-brand-orange text-white px-5 py-2.5 rounded hover:bg-brand-orange-dark transition-colors">
           Start a Project
         </a>
       </li>
@@ -38,7 +38,7 @@ const navLinks = [
 
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-stone-700 hover:text-stone-900"
+      class="md:hidden p-2 text-brand-teal hover:text-brand-teal-dark"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -48,20 +48,20 @@ const navLinks = [
     </button>
   </nav>
 
-  <div id="mobile-menu" class="md:hidden hidden border-t border-stone-200">
-    <div class="px-6 py-4 space-y-3 bg-stone-50">
+  <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200">
+    <div class="px-6 py-4 space-y-3 bg-white">
       {navLinks.map(({ label, href }) => (
         <a
           href={href}
           class:list={[
-            'block text-sm font-medium py-2 transition-colors',
-            pathname.startsWith(href) ? 'text-stone-900' : 'text-stone-500 hover:text-stone-900',
+            'block text-sm font-heading font-semibold uppercase tracking-wider py-2 transition-colors',
+            pathname.startsWith(href) ? 'text-brand-teal' : 'text-gray-500 hover:text-brand-teal',
           ]}
         >
           {label}
         </a>
       ))}
-      <a href="/contact" class="block text-sm font-medium bg-stone-900 text-white px-5 py-2.5 rounded text-center hover:bg-stone-800 transition-colors mt-2">
+      <a href="/contact" class="block text-sm font-heading font-semibold uppercase tracking-wider bg-brand-orange text-white px-5 py-2.5 rounded text-center hover:bg-brand-orange-dark transition-colors mt-2">
         Start a Project
       </a>
     </div>

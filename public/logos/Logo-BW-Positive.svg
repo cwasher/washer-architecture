@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 619 626" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-455,-1764)">
+        <g id="Logo-BW-Positive" transform="matrix(1,0,0,1,-0.664636,-0.523575)">
+            <rect x="455.665" y="1764.52" width="618.634" height="625.554" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="455.665" y="1764.52" width="618.634" height="625.554"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="BW-Positive-Logo" serif:id="BW Positive Logo" transform="matrix(1,0,0,1,15.6462,1324.36)">
+                    <g transform="matrix(0.831914,0,0,0.831914,190.795,192.386)">
+                        <rect x="311.576" y="309.664" width="721.228" height="721.228" style="fill:none;stroke:black;stroke-width:10.02px;"/>
+                    </g>
+                    <g transform="matrix(0.790319,0,0,0.790319,218.756,220.267)">
+                        <rect x="311.576" y="309.664" width="721.228" height="721.228" style="fill:none;stroke:black;stroke-width:5.27px;"/>
+                    </g>
+                    <g transform="matrix(1.00846,0,0,1,-5.3011,0)">
+                        <rect x="740.454" y="1016.97" width="277.201" height="49.269" style="fill:white;"/>
+                    </g>
+                    <g transform="matrix(0.325424,0,0,0.325424,672.073,983.279)">
+                        <text x="233.712px" y="217.351px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:147.244px;">architecture</text>
+                    </g>
+                    <g transform="matrix(3.70467,0,0,3.70467,-3209.34,-760.539)">
+                        <text x="1001.97px" y="422.504px" style="font-family:'CambriaMath', 'Cambria Math', serif;font-size:42.739px;">w<tspan x="1034.28px 1055.15px " y="422.504px 422.504px ">as</tspan>her</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

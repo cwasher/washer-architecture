@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 619 626" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-440,-657)">
+        <g id="Logo-Color-Positive" transform="matrix(1,0,0,1,-0.664636,-0.564721)">
+            <rect x="440.665" y="657.565" width="618.634" height="625.554" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="440.665" y="657.565" width="618.634" height="625.554"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="Color-Positive-Logo" serif:id="Color Positive Logo" transform="matrix(1,0,0,1,0.646223,217.446)">
+                    <g transform="matrix(0.790319,0,0,0.790319,218.756,220.267)">
+                        <path d="M1015.05,1030.89L1032.8,1030.89L1032.8,309.664L311.576,309.664L311.576,1030.89L661.331,1030.89" style="fill:none;stroke:rgb(71,96,102);stroke-width:5.27px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,0.0184137,-216.882)">
+                        <path d="M1020.95,1266.88L1049.98,1266.88L1049.98,666.882L449.982,666.882L449.982,1266.88L741.4,1266.88" style="fill:none;stroke:rgb(71,96,102);stroke-width:8.33px;"/>
+                    </g>
+                    <g transform="matrix(0.325424,0,0,0.325424,672.073,983.279)">
+                        <text x="233.712px" y="217.351px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:147.244px;fill:rgb(77,77,77);">architecture</text>
+                    </g>
+                    <g transform="matrix(3.70467,0,0,3.70467,-3209.34,-760.539)">
+                        <text x="1001.97px" y="422.504px" style="font-family:'CambriaMath', 'Cambria Math', serif;font-size:42.739px;fill:rgb(255,157,0);">w<tspan x="1034.28px 1055.15px " y="422.504px 422.504px ">as</tspan>her</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -28,9 +28,24 @@ src/
     global.css        # Global styles, Tailwind directives, font imports
 public/
   images/projects/    # Project images organized by project slug
+  logos/              # Brand logos (Color/BW, Positive/Negative variants in SVG + PNG)
   favicon.svg
   robots.txt
 ```
+
+## Brand Colors
+- **Primary (Orange)**: #FF9D00 — used for CTAs, accents, section labels, hover states
+- **Primary Accent (Dark Teal)**: #476066 — used for headings, nav, dark sections, footer background
+- **Secondary Accent (Light Slate)**: #7D87A1 — used for metadata text, secondary labels
+
+## Brand Fonts
+- **Headings/Subheadings**: Source Sans 3 (Google Fonts substitute for Trebuchet MS)
+- **Body Text**: Source Serif 4 (Google Fonts substitute for Cambria Math)
+
+## Logo Usage
+- `public/logos/Logo-Color-Positive.svg` — used on light backgrounds (header)
+- `public/logos/Logo-Color-Negative.svg` — used on dark backgrounds (footer)
+- BW variants also available for print or simplified contexts
 
 ## Content Model (Projects)
 Each project is a Markdown file in `src/content/projects/` with this frontmatter schema:
@@ -63,14 +78,18 @@ npm run preview   # Preview production build
 ```
 
 ## Design System
-- **Fonts**: Inter (Google Fonts) with system fallbacks
-- **Colors**: Stone palette (neutral warm grays)
+- **Fonts**: Source Sans 3 (headings), Source Serif 4 (body) via Google Fonts
+- **Colors**: Brand orange (#FF9D00), dark teal (#476066), light slate (#7D87A1), with neutral grays
 - **Layout**: Max-width 7xl (80rem) container with responsive padding
+- **Buttons**: Primary (orange), Secondary (teal outline)
+- **Section backgrounds**: White, Light gray, Teal, Dark teal
 
 ## Recent Changes
+- 2026-02-26: Full brand customization — brand colors (orange/teal/slate), font pairing (Source Sans 3 + Source Serif 4), logos in header/footer, favicon updated
 - 2026-02-20: Initial build — all pages, content collections, SEO, sitemap, contact form
 
 ## User Preferences
-- Clean, minimal, modern architecture-firm aesthetic
+- Brand-aligned design using orange, dark teal, and light slate color palette
+- Trebuchet MS style headings (Source Sans 3) + Cambria Math style body (Source Serif 4)
 - Performance-focused: minimal JS
 - Static site output, no external CMS or database

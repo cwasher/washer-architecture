@@ -27,16 +27,16 @@ const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] 
 <BaseLayout title={project.data.title} description={project.data.summary} ogImage={project.data.ogImage || project.data.coverImage}>
   <Section bg="white">
     <div class="max-w-4xl">
-      <a href="/projects" class="inline-flex items-center text-sm text-stone-400 hover:text-stone-700 transition-colors mb-8">
+      <a href="/projects" class="inline-flex items-center text-sm font-heading font-semibold text-brand-slate hover:text-brand-orange transition-colors mb-8">
         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
         All Projects
       </a>
 
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight">{project.data.title}</h1>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-brand-teal-dark">{project.data.title}</h1>
 
-      <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-500">
+      <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm font-body text-brand-slate">
         <span>{project.data.location}</span>
         <span>{project.data.year}</span>
         <span>{project.data.projectType}</span>
@@ -48,19 +48,19 @@ const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] 
         ))}
       </div>
 
-      <p class="mt-8 text-lg text-stone-600 leading-relaxed max-w-2xl">{project.data.summary}</p>
+      <p class="mt-8 text-lg font-body text-gray-600 leading-relaxed max-w-2xl">{project.data.summary}</p>
     </div>
   </Section>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="aspect-[16/9] overflow-hidden rounded-sm bg-stone-200">
+    <div class="aspect-[16/9] overflow-hidden rounded bg-gray-200">
       <img src={project.data.coverImage} alt={project.data.title} class="w-full h-full object-cover" />
     </div>
   </div>
 
   <Section bg="white">
     <div class="max-w-3xl">
-      <div class="prose prose-stone prose-lg max-w-none">
+      <div class="prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-brand-teal-dark prose-p:font-body prose-p:text-gray-600 prose-a:text-brand-orange-text prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-teal-dark">
         <Content />
       </div>
     </div>
@@ -77,18 +77,18 @@ const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] 
       <div class="max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-8">
         {project.data.services.length > 0 && (
           <div>
-            <h3 class="text-sm font-semibold uppercase tracking-wider text-stone-400 mb-3">Services</h3>
+            <h3 class="text-sm font-heading font-semibold uppercase tracking-wider text-brand-orange-text mb-3">Services</h3>
             <ul class="space-y-1.5">
               {project.data.services.map((service: string) => (
-                <li class="text-sm text-stone-700">{service}</li>
+                <li class="text-sm font-body text-gray-700">{service}</li>
               ))}
             </ul>
           </div>
         )}
         {project.data.credits && (
           <div>
-            <h3 class="text-sm font-semibold uppercase tracking-wider text-stone-400 mb-3">Credits</h3>
-            <p class="text-sm text-stone-700">{project.data.credits}</p>
+            <h3 class="text-sm font-heading font-semibold uppercase tracking-wider text-brand-orange-text mb-3">Credits</h3>
+            <p class="text-sm font-body text-gray-700">{project.data.credits}</p>
           </div>
         )}
       </div>
@@ -96,17 +96,17 @@ const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] 
   )}
 
   <Section bg="white">
-    <div class="flex justify-between items-center border-t border-stone-200 pt-8">
+    <div class="flex justify-between items-center border-t border-gray-200 pt-8">
       {prevProject ? (
         <a href={`/projects/${prevProject.id}`} class="group text-left">
-          <p class="text-xs text-stone-400 mb-1">Previous</p>
-          <p class="text-sm font-medium text-stone-700 group-hover:text-stone-900 transition-colors">{prevProject.data.title}</p>
+          <p class="text-xs font-heading font-semibold uppercase tracking-wider text-brand-slate mb-1">Previous</p>
+          <p class="text-sm font-heading font-bold text-brand-teal-dark group-hover:text-brand-orange transition-colors">{prevProject.data.title}</p>
         </a>
       ) : <div />}
       {nextProject ? (
         <a href={`/projects/${nextProject.id}`} class="group text-right">
-          <p class="text-xs text-stone-400 mb-1">Next</p>
-          <p class="text-sm font-medium text-stone-700 group-hover:text-stone-900 transition-colors">{nextProject.data.title}</p>
+          <p class="text-xs font-heading font-semibold uppercase tracking-wider text-brand-slate mb-1">Next</p>
+          <p class="text-sm font-heading font-bold text-brand-teal-dark group-hover:text-brand-orange transition-colors">{nextProject.data.title}</p>
         </a>
       ) : <div />}
     </div>
