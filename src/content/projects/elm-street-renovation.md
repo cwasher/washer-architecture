@@ -7,11 +7,13 @@ services: ["Schematic Design", "Design Development", "Construction Documents"]
 tags: ["residential", "renovation", "historic", "adaptive reuse"]
 featured: true
 summary: "A sensitive renovation of a 1940s craftsman bungalow that preserves its historic character while introducing modern amenities and an open floor plan."
-coverImage: "/images/projects/elm-street-renovation/cover.svg"
+coverImage: "/images/projects/elm-street-renovation/cover.jpg"
 gallery:
-  - "/images/projects/elm-street-renovation/01.svg"
-  - "/images/projects/elm-street-renovation/02.svg"
-  - "/images/projects/elm-street-renovation/03.svg"
+  - "/images/projects/elm-street-renovation/01.jpg"
+  - "/images/projects/elm-street-renovation/02.jpg"
+  - "/images/projects/elm-street-renovation/03.jpg"
+  - "/images/projects/elm-street-renovation/04.jpg"
+  - "/images/projects/elm-street-renovation/05.jpg"
 credits: "General Contractor: Heritage Home Builders"
 ---
 

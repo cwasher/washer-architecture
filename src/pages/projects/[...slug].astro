@@ -53,9 +53,20 @@ const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] 
   </Section>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="aspect-[16/9] overflow-hidden rounded bg-gray-200">
-      <img src={project.data.coverImage} alt={project.data.title} class="w-full h-full object-cover" />
-    </div>
+    <a
+      href={project.data.coverImage}
+      class="glightbox group block overflow-hidden rounded-lg bg-gray-100 shadow-lg cursor-zoom-in"
+      data-gallery="project-gallery"
+      data-alt={project.data.title}
+    >
+      <div class="aspect-[16/9] overflow-hidden">
+        <img
+          src={project.data.coverImage}
+          alt={project.data.title}
+          class="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-95"
+        />
+      </div>
+    </a>
   </div>
 
   <Section bg="white">
@@ -111,4 +122,38 @@ const nextProject = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] 
       ) : <div />}
     </div>
   </Section>
+
+  <script>
+    import GLightbox from 'glightbox';
+    import 'glightbox/dist/css/glightbox.min.css';
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      closeOnOutsideClick: true,
+      skin: 'clean',
+      openEffect: 'fade',
+      closeEffect: 'fade',
+    });
+  </script>
+
+  <style is:global>
+    .goverlay {
+      background: rgba(0, 0, 0, 0.92) !important;
+    }
+    .glightbox-clean .gclose,
+    .glightbox-clean .gnext,
+    .glightbox-clean .gprev {
+      background: rgba(71, 96, 102, 0.6) !important;
+      border: none !important;
+    }
+    .glightbox-clean .gclose:hover,
+    .glightbox-clean .gnext:hover,
+    .glightbox-clean .gprev:hover {
+      background: rgba(71, 96, 102, 0.9) !important;
+    }
+    .glightbox-clean .gslide-image img {
+      border-radius: 4px;
+    }
+  </style>
 </BaseLayout>

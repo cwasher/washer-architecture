@@ -7,11 +7,13 @@ services: ["Schematic Design", "Design Development", "Construction Documents", "
 tags: ["residential", "new construction", "modern", "sustainable"]
 featured: true
 summary: "A 3,200 sq ft modern home nestled into the Ozark hillside, designed to maximize natural light and blur the line between indoor and outdoor living."
-coverImage: "/images/projects/cedar-ridge-residence/cover.svg"
+coverImage: "/images/projects/cedar-ridge-residence/cover.jpg"
 gallery:
-  - "/images/projects/cedar-ridge-residence/01.svg"
-  - "/images/projects/cedar-ridge-residence/02.svg"
-  - "/images/projects/cedar-ridge-residence/03.svg"
+  - "/images/projects/cedar-ridge-residence/01.jpg"
+  - "/images/projects/cedar-ridge-residence/02.jpg"
+  - "/images/projects/cedar-ridge-residence/03.jpg"
+  - "/images/projects/cedar-ridge-residence/04.jpg"
+  - "/images/projects/cedar-ridge-residence/05.jpg"
 credits: "General Contractor: Ridgeline Builders | Landscape: Ozark Native Design"
 ---
 

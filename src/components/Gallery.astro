@@ -2,22 +2,50 @@
 interface Props {
   images: string[];
   alt: string;
+  coverImage?: string;
 }
 
-const { images, alt } = Astro.props;
+const { images, alt, coverImage } = Astro.props;
+
+const allImages = coverImage ? [coverImage, ...images] : images;
 ---
 
-{images.length > 0 && (
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    {images.map((src, i) => (
-      <div class:list={['overflow-hidden rounded-sm bg-stone-200', i === 0 ? 'md:col-span-2' : '']}>
-        <img
-          src={src}
-          alt={`${alt} - Image ${i + 1}`}
-          class="w-full h-full object-cover"
-          loading="lazy"
-        />
-      </div>
-    ))}
+{allImages.length > 0 && (
+  <div>
+    <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-orange-text mb-6">Gallery</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      {allImages.map((src, i) => {
+        const isHero = i === 0;
+        const isWide = i === 3;
+        const spanClass = isHero
+          ? 'col-span-2 md:col-span-4 row-span-1'
+          : isWide
+            ? 'col-span-2 row-span-1'
+            : 'col-span-1 row-span-1';
+        const aspectClass = isHero
+          ? 'aspect-[21/9]'
+          : isWide
+            ? 'aspect-[21/9]'
+            : 'aspect-[4/3]';
+
+        return (
+          <a
+            href={src}
+            class:list={['glightbox group block overflow-hidden rounded-lg bg-gray-100 cursor-zoom-in', spanClass]}
+            data-gallery="project-gallery"
+            data-alt={`${alt} - Image ${i + 1}`}
+          >
+            <div class:list={['w-full h-full overflow-hidden', aspectClass]}>
+              <img
+                src={src}
+                alt={`${alt} - Image ${i + 1}`}
+                class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-90"
+                loading="lazy"
+              />
+            </div>
+          </a>
+        );
+      })}
+    </div>
   </div>
 )}

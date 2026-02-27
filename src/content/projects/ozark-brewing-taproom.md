@@ -7,11 +7,13 @@ services: ["Schematic Design", "Design Development", "Construction Documents"]
 tags: ["commercial", "hospitality", "adaptive reuse", "interior"]
 featured: true
 summary: "A former auto-repair garage transformed into a vibrant taproom and brewery, celebrating the building's industrial bones while creating a warm, inviting gathering space."
-coverImage: "/images/projects/ozark-brewing-taproom/cover.svg"
+coverImage: "/images/projects/ozark-brewing-taproom/cover.jpg"
 gallery:
-  - "/images/projects/ozark-brewing-taproom/01.svg"
-  - "/images/projects/ozark-brewing-taproom/02.svg"
-  - "/images/projects/ozark-brewing-taproom/03.svg"
+  - "/images/projects/ozark-brewing-taproom/01.jpg"
+  - "/images/projects/ozark-brewing-taproom/02.jpg"
+  - "/images/projects/ozark-brewing-taproom/03.jpg"
+  - "/images/projects/ozark-brewing-taproom/04.jpg"
+  - "/images/projects/ozark-brewing-taproom/05.jpg"
 credits: "General Contractor: Forge Construction | Interior Design: Studio South"
 ---
 

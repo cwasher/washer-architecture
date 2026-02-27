@@ -7,11 +7,13 @@ services: ["Schematic Design", "Design Development", "Construction Documents", "
 tags: ["multi-family", "new construction", "urban", "infill"]
 featured: true
 summary: "A collection of six contemporary townhomes on an urban infill site, blending density with privacy through thoughtful massing and shared courtyard spaces."
-coverImage: "/images/projects/bentonville-townhomes/cover.svg"
+coverImage: "/images/projects/bentonville-townhomes/cover.jpg"
 gallery:
-  - "/images/projects/bentonville-townhomes/01.svg"
-  - "/images/projects/bentonville-townhomes/02.svg"
-  - "/images/projects/bentonville-townhomes/03.svg"
+  - "/images/projects/bentonville-townhomes/01.jpg"
+  - "/images/projects/bentonville-townhomes/02.jpg"
+  - "/images/projects/bentonville-townhomes/03.jpg"
+  - "/images/projects/bentonville-townhomes/04.jpg"
+  - "/images/projects/bentonville-townhomes/05.jpg"
 ---
 
 The Bentonville Townhomes occupy a narrow infill lot two blocks from the downtown square. The challenge was to deliver urban density — six three-bedroom units on a quarter-acre site — while ensuring each home feels private, light-filled, and connected to the outdoors.

@@ -6,6 +6,7 @@ A static marketing/portfolio website for "Washer Architecture", an architectural
 ## Tech Stack
 - **Framework**: Astro v5 (static output)
 - **Styling**: Tailwind CSS v3 + @tailwindcss/typography
+- **Lightbox**: GLightbox (lightweight, ~11KB) — used on project detail pages for fullscreen image viewing
 - **Content**: Astro Content Collections (Markdown with frontmatter schema)
 - **Deployment**: Static site (no server required)
 
@@ -67,7 +68,7 @@ Each project is a Markdown file in `src/content/projects/` with this frontmatter
 2. Add frontmatter matching the schema above
 3. Write project description in Markdown body
 4. Add images to `public/images/projects/<slug>/`
-5. Reference images as `/images/projects/<slug>/cover.svg` (or .jpg/.png)
+5. Reference images as `/images/projects/<slug>/cover.jpg` (or .png)
 
 ## Running Locally
 ```bash
@@ -84,7 +85,16 @@ npm run preview   # Preview production build
 - **Buttons**: Primary (orange), Secondary (teal outline)
 - **Section backgrounds**: White, Light gray, Teal, Dark teal
 
+## Gallery Component
+- `src/components/Gallery.astro` renders a mixed-size CSS grid with varied aspect ratios (hero full-width, pairs, panoramic strip)
+- All gallery images are wrapped in `<a class="glightbox">` tags for lightbox integration
+- Cover image on project detail pages is also lightbox-clickable and part of the same gallery group
+- GLightbox is imported via ES module in an inline `<script>` tag on `[...slug].astro` — CSS imported alongside JS
+- Lightbox supports keyboard navigation (arrows, Escape), swipe, and click-outside-to-close
+- Brand-styled overlay (dark, 92% opacity) with teal-tinted navigation controls
+
 ## Recent Changes
+- 2026-02-27: Gallery upgrade — stock photography for all 4 projects, mixed-size CSS grid gallery, GLightbox lightbox integration, cover image clickable
 - 2026-02-26: Full brand customization — brand colors (orange/teal/slate), font pairing (Source Sans 3 + Source Serif 4), logos in header/footer, favicon updated
 - 2026-02-20: Initial build — all pages, content collections, SEO, sitemap, contact form
 
