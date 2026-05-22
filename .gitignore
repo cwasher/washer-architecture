@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -12,13 +13,27 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# attached assets (Replit agent downloads)
+attached_assets/
 
 # environment variables
 .env
 .env.production
+.env.local
+.env*.local
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# Windows-specific files
+Thumbs.db
+ehthumbs.db
+
+# JetBrains IDEs
 .idea/
+
+# Replit-internal agent and cache directories
+.local/
+.agents/
+.cache/
+.config/
