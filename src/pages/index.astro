@@ -4,6 +4,35 @@ import Section from '../components/Section.astro';
 import Button from '../components/Button.astro';
 import ProjectGrid from '../components/ProjectGrid.astro';
 import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
+import heroImage from '../assets/hero/home-hero.jpg';
+
+const heroWidths = [640, 960, 1280, 1600, 1920, 2560];
+
+const heroAvif = await Promise.all(
+  heroWidths.map((width) =>
+    getImage({ src: heroImage, width, format: 'avif', quality: 55 })
+  )
+);
+const heroWebp = await Promise.all(
+  heroWidths.map((width) =>
+    getImage({ src: heroImage, width, format: 'webp', quality: 70 })
+  )
+);
+const heroFallback = await getImage({
+  src: heroImage,
+  width: 1600,
+  format: 'jpg',
+  quality: 72,
+});
+
+const heroAvifSrcset = heroAvif
+  .map((img, i) => `${img.src} ${heroWidths[i]}w`)
+  .join(', ');
+const heroWebpSrcset = heroWebp
+  .map((img, i) => `${img.src} ${heroWidths[i]}w`)
+  .join(', ');
+const heroSizes = '100vw';
 
 const allProjects = await getCollection('projects');
 const featuredProjects = allProjects
@@ -37,11 +66,31 @@ const process = [
 ];
 ---
 
-<BaseLayout title="Home" transparentHeader>
-  <section
-    class="relative min-h-screen flex items-center bg-brand-teal-dark bg-cover bg-center"
-    style="background-image: url('/images/projects/cedar-ridge-residence/cover.jpg');"
-  >
+<BaseLayout
+  title="Home"
+  transparentHeader
+  preloadImages={[
+    {
+      imagesrcset: heroAvifSrcset,
+      imagesizes: heroSizes,
+      type: 'image/avif',
+    },
+  ]}
+>
+  <section class="relative min-h-screen flex items-center bg-brand-teal-dark overflow-hidden">
+    <picture>
+      <source type="image/avif" srcset={heroAvifSrcset} sizes={heroSizes} />
+      <source type="image/webp" srcset={heroWebpSrcset} sizes={heroSizes} />
+      <img
+        src={heroFallback.src}
+        alt=""
+        width={heroImage.width}
+        height={heroImage.height}
+        fetchpriority="high"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    </picture>
     <div class="absolute inset-0 bg-brand-teal-dark/70"></div>
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40 w-full">
       <div class="max-w-3xl">

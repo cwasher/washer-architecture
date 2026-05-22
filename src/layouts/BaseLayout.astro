@@ -3,11 +3,19 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
+interface PreloadImage {
+  href?: string;
+  imagesrcset?: string;
+  imagesizes?: string;
+  type?: string;
+}
+
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
   transparentHeader?: boolean;
+  preloadImages?: PreloadImage[];
 }
 
 const {
@@ -15,6 +23,7 @@ const {
   description = 'Washer Architecture — Thoughtful design for modern living. Custom homes, renovations, and commercial projects in Northwest Arkansas.',
   ogImage = '/og-default.png',
   transparentHeader = false,
+  preloadImages = [],
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -39,6 +48,17 @@ const siteTitle = title === 'Home' ? 'Washer Architecture' : `${title} | Washer 
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {preloadImages.map((img) => (
+      <link
+        rel="preload"
+        as="image"
+        href={img.href}
+        imagesrcset={img.imagesrcset}
+        imagesizes={img.imagesizes}
+        type={img.type}
+        fetchpriority="high"
+      />
+    ))}
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
