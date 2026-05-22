@@ -1,4 +1,9 @@
 ---
+interface Props {
+  transparent?: boolean;
+}
+
+const { transparent = false } = Astro.props;
 const pathname = Astro.url.pathname;
 const navLinks = [
   { label: 'Projects', href: '/projects' },
@@ -7,28 +12,53 @@ const navLinks = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200/60">
-  <nav class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
+<header
+  id="site-header"
+  data-transparent={transparent ? 'true' : 'false'}
+  class:list={[
+    'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+    transparent
+      ? 'bg-transparent border-b border-transparent'
+      : 'bg-white/95 backdrop-blur-sm border-b border-gray-200/60',
+  ]}
+>
+  <nav class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-24 lg:h-32" aria-label="Main navigation">
     <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-      <img src="/logos/Logo-Color-Positive.svg" alt="Washer Architecture" class="h-12 lg:h-14 w-auto" />
+      <img
+        id="logo-positive"
+        src="/logos/Logo-Color-Positive.svg"
+        alt="Washer Architecture"
+        class:list={['h-20 lg:h-24 w-auto', transparent && 'hidden']}
+      />
+      <img
+        id="logo-negative"
+        src="/logos/Logo-Color-Negative.svg"
+        alt="Washer Architecture"
+        class:list={['h-20 lg:h-24 w-auto', !transparent && 'hidden']}
+      />
     </a>
 
     <ul class="hidden md:flex items-center gap-8">
-      {navLinks.map(({ label, href }) => (
-        <li>
-          <a
-            href={href}
-            class:list={[
-              'text-sm font-heading font-semibold uppercase tracking-wider transition-colors',
-              pathname.startsWith(href)
-                ? 'text-brand-teal'
-                : 'text-gray-500 hover:text-brand-teal',
-            ]}
-          >
-            {label}
-          </a>
-        </li>
-      ))}
+      {navLinks.map(({ label, href }) => {
+        const isActive = pathname.startsWith(href);
+        return (
+          <li>
+            <a
+              href={href}
+              data-nav-link
+              data-active={isActive ? 'true' : 'false'}
+              class:list={[
+                'text-sm font-heading font-semibold uppercase tracking-wider transition-colors',
+                transparent
+                  ? (isActive ? 'text-white' : 'text-white/80 hover:text-white')
+                  : (isActive ? 'text-brand-teal' : 'text-gray-500 hover:text-brand-teal'),
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        );
+      })}
       <li>
         <a href="/contact" class="text-sm font-heading font-semibold uppercase tracking-wider bg-brand-orange text-white px-5 py-2.5 rounded hover:bg-brand-orange-dark transition-colors">
           Start a Project
@@ -38,7 +68,10 @@ const navLinks = [
 
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-brand-teal hover:text-brand-teal-dark"
+      class:list={[
+        'md:hidden p-2 transition-colors',
+        transparent ? 'text-white hover:text-white/80' : 'text-brand-teal hover:text-brand-teal-dark',
+      ]}
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -68,7 +101,7 @@ const navLinks = [
   </div>
 </header>
 
-<div class="h-16 lg:h-20"></div>
+{!transparent && <div class="h-24 lg:h-32"></div>}
 
 <script>
   const btn = document.getElementById('mobile-menu-btn');
@@ -86,4 +119,58 @@ const navLinks = [
       );
     }
   });
+
+  const header = document.getElementById('site-header');
+  if (header && header.dataset.transparent === 'true') {
+    const logoPositive = document.getElementById('logo-positive');
+    const logoNegative = document.getElementById('logo-negative');
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+
+    const transparentClasses = ['bg-transparent', 'border-transparent'];
+    const solidClasses = ['bg-white/95', 'backdrop-blur-sm', 'border-gray-200/60'];
+
+    const applyState = (scrolled: boolean) => {
+      if (scrolled) {
+        header.classList.remove(...transparentClasses);
+        header.classList.add(...solidClasses);
+        logoPositive?.classList.remove('hidden');
+        logoNegative?.classList.add('hidden');
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute('data-active') === 'true';
+          link.classList.remove('text-white', 'text-white/80', 'hover:text-white');
+          link.classList.add(
+            isActive ? 'text-brand-teal' : 'text-gray-500',
+            'hover:text-brand-teal'
+          );
+        });
+        btn?.classList.remove('text-white', 'hover:text-white/80');
+        btn?.classList.add('text-brand-teal', 'hover:text-brand-teal-dark');
+      } else {
+        header.classList.add(...transparentClasses);
+        header.classList.remove(...solidClasses);
+        logoPositive?.classList.add('hidden');
+        logoNegative?.classList.remove('hidden');
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute('data-active') === 'true';
+          link.classList.remove('text-brand-teal', 'text-gray-500', 'hover:text-brand-teal');
+          link.classList.add(
+            isActive ? 'text-white' : 'text-white/80',
+            'hover:text-white'
+          );
+        });
+        btn?.classList.add('text-white', 'hover:text-white/80');
+        btn?.classList.remove('text-brand-teal', 'hover:text-brand-teal-dark');
+      }
+    };
+
+    let scrolled = window.scrollY > 80;
+    applyState(scrolled);
+    window.addEventListener('scroll', () => {
+      const next = window.scrollY > 80;
+      if (next !== scrolled) {
+        scrolled = next;
+        applyState(scrolled);
+      }
+    }, { passive: true });
+  }
 </script>

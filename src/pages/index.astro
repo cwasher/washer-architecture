@@ -37,25 +37,38 @@ const process = [
 ];
 ---
 
-<BaseLayout title="Home">
-  <section class="relative bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-36">
+<BaseLayout title="Home" transparentHeader>
+  <section
+    class="relative min-h-screen flex items-center bg-brand-teal-dark bg-cover bg-center"
+    style="background-image: url('/images/projects/cedar-ridge-residence/cover.jpg');"
+  >
+    <div class="absolute inset-0 bg-brand-teal-dark/70"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40 w-full">
       <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-brand-teal-dark leading-tight">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white leading-tight">
           Architecture that<br /><span class="text-brand-orange">belongs here.</span>
         </h1>
-        <p class="mt-6 text-lg md:text-xl font-body text-gray-600 leading-relaxed max-w-2xl">
+        <p class="mt-6 text-lg md:text-xl font-body text-white/85 leading-relaxed max-w-2xl">
           Washer Architecture designs homes, renovations, and community spaces rooted in the landscape and culture of Northwest Arkansas.
         </p>
         <div class="mt-10 flex flex-wrap gap-4">
-          <Button href="/projects" variant="primary" size="lg">View Projects</Button>
-          <Button href="/contact" variant="secondary" size="lg">Start a Project</Button>
+          <Button href="/contact" variant="primary" size="lg">Start a Project</Button>
+          <Button href="/projects" variant="outline-light" size="lg">View Projects</Button>
         </div>
       </div>
     </div>
+    <a
+      href="#featured-projects"
+      aria-label="Scroll to content"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors animate-bounce-slow"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
   </section>
 
-  <Section bg="white">
+  <Section bg="white" id="featured-projects">
     <div class="text-center mb-12 lg:mb-16">
       <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-orange-text mb-3">Selected Work</p>
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-teal-dark">Featured Projects</h2>

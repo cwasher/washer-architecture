@@ -1,7 +1,7 @@
 ---
 interface Props {
   href?: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outline-light';
   size?: 'sm' | 'md' | 'lg';
   type?: 'button' | 'submit';
   class?: string;
@@ -20,6 +20,7 @@ const baseClasses = 'inline-flex items-center justify-center font-heading font-s
 const variants = {
   primary: 'bg-brand-orange text-white hover:bg-brand-orange-dark',
   secondary: 'bg-transparent text-brand-teal border-2 border-brand-teal hover:bg-brand-teal hover:text-white',
+  'outline-light': 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-brand-teal-dark',
 };
 
 const sizes = {
