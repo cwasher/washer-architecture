@@ -76,6 +76,17 @@ import Button from '../components/Button.astro';
             </select>
           </div>
 
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="sqft" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Estimated Square Footage <span class="text-brand-slate font-normal text-xs">(optional)</span></label>
+              <input type="text" id="sqft" name="sqft" class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange" placeholder="e.g. 2,400 sq ft" />
+            </div>
+            <div>
+              <label for="budget" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Estimated Construction Cost <span class="text-brand-slate font-normal text-xs">(optional)</span></label>
+              <input type="text" id="budget" name="budget" class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange" placeholder="e.g. $600,000–$800,000" />
+            </div>
+          </div>
+
           <div>
             <label for="message" class="block text-sm font-heading font-semibold text-brand-teal-dark mb-1.5">Message <span class="text-brand-orange">*</span></label>
             <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2.5 text-sm font-body border border-gray-300 rounded bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange resize-y" placeholder="Tell us about your project, site, and what you're hoping to achieve..."></textarea>
