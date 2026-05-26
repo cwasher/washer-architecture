@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
-import Button from '../components/Button.astro';
 
 const values = [
   { title: 'Listening First', desc: 'Good design begins with understanding. We take time to learn how you live, what you value, what your site offers, and what constraints need to be addressed before design decisions are made.' },
@@ -19,11 +18,23 @@ const services = [
   'Zoning & Code Consultation',
   'Sustainable Design Strategy',
 ];
+
+const focusAreas = [
+  'Custom Homes',
+  'Renovations & Additions',
+  'High-Performance Residential',
+  'Construction Documents',
+  'Construction Support',
+];
 ---
 
 <BaseLayout title="About" description="Learn about Washer Architecture — our story, values, and approach to design in Northwest Arkansas.">
+
+  <!-- Intro + Portrait -->
   <Section bg="white">
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
+
+      <!-- Text -->
       <div class="lg:col-span-3 order-2 lg:order-1">
         <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-orange-text mb-3">About</p>
         <h1 class="text-3xl md:text-4xl font-heading font-bold text-brand-teal-dark">Thoughtful homes. Clear process.</h1>
@@ -43,6 +54,7 @@ const services = [
         </div>
       </div>
 
+      <!-- Portrait placeholder -->
       <div class="lg:col-span-2 order-1 lg:order-2">
         <figure class="lg:sticky lg:top-28">
           <div class="relative aspect-[4/5] w-full max-w-xs mx-auto lg:max-w-none rounded-lg overflow-hidden bg-gradient-to-br from-brand-teal-dark to-brand-teal shadow-md ring-1 ring-brand-teal-dark/10">
@@ -60,10 +72,39 @@ const services = [
           </figcaption>
         </figure>
       </div>
+
     </div>
   </Section>
 
+  <!-- About Chris -->
   <Section bg="light">
+    <div class="max-w-3xl">
+      <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-orange-text mb-3">About Chris</p>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-teal-dark mb-8">Chris Washer, Architect</h2>
+      <div class="space-y-5 font-body text-gray-600 leading-relaxed">
+        <p>
+          Chris Washer is the owner and architect behind Washer Architecture. His work focuses on custom homes, renovations, and high-performance residential design throughout Northwest Arkansas.
+        </p>
+        <p>
+          Chris approaches architecture as both a creative and technical discipline. He enjoys the early conversations that uncover how a client wants to live, but also values the detailed work required to turn those ideas into clear drawings, coordinated decisions, and buildable solutions.
+        </p>
+        <p>
+          With a strong background in residential design, BIM modeling, construction documents, and building performance, Chris works to bridge the gap between vision and execution. His goal is to help clients move through the design process with clarity, confidence, and a home that feels deeply considered.
+        </p>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-200">
+        <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-slate mb-3">Professional Focus</p>
+        <div class="flex flex-wrap gap-2">
+          {focusAreas.map((item) => (
+            <span class="text-xs font-heading font-semibold text-brand-teal-dark bg-white border border-gray-200 rounded px-3 py-1.5">{item}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Values -->
+  <Section bg="white">
     <div class="text-center mb-12 lg:mb-16">
       <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-orange-text mb-3">What Guides Us</p>
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-teal-dark">Our Values</h2>
@@ -78,15 +119,35 @@ const services = [
     </div>
   </Section>
 
+  <!-- Services -->
+  <Section bg="light">
+    <div class="max-w-3xl">
+      <p class="text-xs font-heading font-semibold uppercase tracking-widest text-brand-orange-text mb-3">What We Offer</p>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-brand-teal-dark mb-8">Services</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+        {services.map((service) => (
+          <li class="flex items-center font-body text-gray-700">
+            <svg class="w-4 h-4 text-brand-orange-text mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            {service}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Section>
+
+  <!-- CTA -->
   <Section bg="dark">
     <div class="text-center">
-      <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Let’s talk about home.</h2>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Let's talk about home.</h2>
       <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto font-body">
-        Every project starts with a few good questions. Tell me what you’re planning, where you are in the process, and what kind of home you hope to create.
+        Every project starts with a few good questions. Tell me what you're planning, where you are in the process, and what kind of home you hope to create.
       </p>
       <a href="/contact" class="inline-flex items-center justify-center font-heading font-semibold uppercase tracking-wider rounded text-sm px-8 py-3.5 bg-brand-orange text-white hover:bg-brand-orange-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:ring-offset-2 focus:ring-offset-brand-teal">
         Start a Conversation
       </a>
     </div>
   </Section>
+
 </BaseLayout>
